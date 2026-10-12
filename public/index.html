@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galerie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="page-galerie">
+  <header class="entete">
+    <h1 id="nom-artiste"></h1>
+    <p id="presentation" class="presentation"></p>
+  </header>
+
+  <main id="galerie" class="galerie" hidden>
+    <article class="oeuvre">
+      <div class="oeuvre-texte" aria-live="polite">
+        <p id="compteur" class="compteur"></p>
+        <h2 id="titre"></h2>
+        <p id="texte" class="texte"></p>
+      </div>
+
+      <div id="scene" class="scene">
+        <button id="precedente" class="nav" type="button" aria-label="Œuvre précédente">&#8249;</button>
+        <div class="cadre">
+          <canvas id="toile" role="img"></canvas>
+        </div>
+        <button id="suivante" class="nav" type="button" aria-label="Œuvre suivante">&#8250;</button>
+      </div>
+    </article>
+
+    <nav id="vignettes" class="vignettes" aria-label="Toutes les œuvres"></nav>
+  </main>
+
+  <p id="vide" class="vide" hidden>Aucune œuvre pour le moment.</p>
+
+  <footer class="pied">
+    © <span id="annee"></span> <span id="nom-pied"></span> — Toutes les œuvres sont protégées par le droit d'auteur.
+  </footer>
+
+  <script type="module" src="/galerie.js"></script>
+</body>
+</html>

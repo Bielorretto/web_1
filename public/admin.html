@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Espace artiste</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="page-admin">
+  <main class="admin">
+    <section id="connexion" class="connexion" hidden>
+      <h1>Espace artiste</h1>
+      <form id="form-connexion" class="carte">
+        <label>Mot de passe
+          <input type="password" name="motdepasse" required autocomplete="current-password" autofocus>
+        </label>
+        <button type="submit">Se connecter</button>
+        <p id="erreur-connexion" class="statut erreur" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="tableau" hidden>
+      <header class="admin-entete">
+        <h1>Espace artiste</h1>
+        <div class="admin-liens">
+          <a href="/" target="_blank" rel="noopener">Voir le site ↗</a>
+          <button id="deconnexion" type="button" class="secondaire">Déconnexion</button>
+        </div>
+      </header>
+
+      <form id="form-artiste" class="carte">
+        <h2>Présentation</h2>
+        <label>Nom affiché
+          <input name="nom" maxlength="120">
+        </label>
+        <label>Texte de présentation (sous le nom)
+          <textarea name="presentation" rows="3" maxlength="2000"></textarea>
+        </label>
+        <div class="actions">
+          <button type="submit">Enregistrer</button>
+          <span class="statut"></span>
+        </div>
+      </form>
+
+      <section class="carte">
+        <h2>Ajouter des œuvres</h2>
+        <label id="depot" class="depot">
+          <input id="fichiers" type="file" accept="image/*" multiple>
+          <span>Glissez vos photos ici ou <u>cliquez pour les choisir</u></span>
+          <small>JPEG, PNG, WebP, HEIC… jusqu'à 40 Mo par photo</small>
+        </label>
+        <p id="statut-envoi" class="statut" role="status"></p>
+      </section>
+
+      <section>
+        <h2>Vos œuvres <span id="nombre" class="nombre"></span></h2>
+        <p class="aide">L'ordre ci-dessous est celui de la galerie. Le texte s'affiche au-dessus de la photo.</p>
+        <ol id="liste" class="liste"></ol>
+      </section>
+    </section>
+  </main>
+
+  <template id="modele-oeuvre">
+    <li class="carte oeuvre-admin">
+      <img class="apercu" alt="">
+      <form class="champs">
+        <label>Titre
+          <input name="titre" maxlength="200" placeholder="Sans titre">
+        </label>
+        <label>Texte de présentation de l'œuvre
+          <textarea name="texte" rows="4" maxlength="5000" placeholder="Technique, dimensions, histoire de l'œuvre…"></textarea>
+        </label>
+        <div class="actions">
+          <button type="submit">Enregistrer</button>
+          <span class="statut"></span>
+        </div>
+      </form>
+      <div class="outils">
+        <button type="button" class="secondaire" data-action="monter" aria-label="Monter">↑</button>
+        <button type="button" class="secondaire" data-action="descendre" aria-label="Descendre">↓</button>
+        <button type="button" class="danger" data-action="supprimer">Supprimer</button>
+      </div>
+    </li>
+  </template>
+
+  <script type="module" src="/admin.js"></script>
+</body>
+</html>

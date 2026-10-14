@@ -1,0 +1,137 @@
+{
+  "version": 2,
+  "site": {
+    "titre": "Petite Nature Paris",
+    "nom": "Delphine Huard",
+    "instagram": "petite_nature_paris",
+    "email": ""
+  },
+  "pages": {
+    "accueil": {
+      "publie": {
+        "blocs": []
+      },
+      "brouillon": null
+    },
+    "demarche": {
+      "publie": {
+        "blocs": [
+          {
+            "id": "demarche-texte",
+            "type": "texte",
+            "x": 250.0,
+            "y": 0.0,
+            "w": 500.0,
+            "html": "<p>Delphine Huard, dessinatrice et graveuse en taille douce, travaille à Vincennes au sein des ateliers de l’Openbach.</p><p>La nature est sa source. Dans un premier temps, qui correspondait également à celui de la découverte de la gravure à l’eau forte, Delphine explorait le monde à travers le règne animal et végétal dans ses moindres détails. Elle cherchait à exprimer la beauté des forces créatrices, le prodige des cycles de la vie, la naissance, la métamorphose, la mort, le renouvellement.</p><p>Delphine Huard travaille actuellement sur plusieurs projets en parallèle, à travers lesquels elle figure la nature comme un sanctuaire où trouver refuge, où se ressourcer. Dans ce travail intime et introspectif, commencé après le décès de ses parents, les paysages luxuriants qui abritaient insectes et plantes se sont transformés en lieux de réminiscence, espaces de mélancolie et de rêverie.</p><p>Il s’agit de lier le passé et le présent, de recomposer des scènes où la végétation envahissante devient étreinte, écrin protecteur contre l’oubli. Ainsi, chaque estampe devient une tentative d’apprivoiser le manque, une manière douce de dire adieu sans tout à fait se résoudre à l’absence. Cette quête se décline en trois séries ; Contemplations, La Femme Oiseau, Sanctuaires.</p><p>La gravure, par sa lenteur et son exigence, épouse cette quête. Graver, c’est ancrer. C’est refuser l’oubli tout en acceptant la transformation. À travers ses estampes, Delphine crée un sanctuaire où mémoire et imaginaire se rejoignent, transformant le deuil en un acte de présence intemporelle. Son dessein est de partager cette vision, d’inviter à un voyage à la fois onirique et introspectif, dans lequel la nature devient le langage d’une mémoire vivante et régénératrice.</p><p>La démarche de Delphine Huard s’articule aujourd’hui autour de cette question essentielle : comment le monde naturel devient l’expression d’une mémoire vivante, en transformation constante, où la création artistique trouve sa place comme un geste de transmission, et de reconstruction, capable de transformer la perte en énergie créatrice ?</p>",
+            "style": "texte",
+            "align": "gauche",
+            "mobileMasque": false,
+            "z": 0
+          }
+        ]
+      },
+      "brouillon": null
+    },
+    "apropos": {
+      "publie": {
+        "blocs": [
+          {
+            "id": "apropos-texte",
+            "type": "texte",
+            "x": 83.3,
+            "y": 0.0,
+            "w": 333.3,
+            "html": "<p>Après des études d’histoire de l’art à la Sorbonne, un DNAT de graphisme aux Beaux-arts d’Orléans, et une formation à l’école des Gobelins à Paris, Delphine Huard a travaillé en tant que cheffe décoratrice dans plusieurs studios de dessin animé.</p><p>Lassée du travail sur ordinateur, Delphine renoue avec le dessin et se forme aux techniques de l’estampe auprès de Pierre Lancelin aux ateliers beaux-arts de la ville de Paris. Conquise, elle achète sa presse taille douce, et installe mon atelier au sein de l’Openbach, association regroupant des artistes pluridisciplinaires.</p><p>En 2025, Delphine a rejoint l’association de graveurs « Ombre et lumière ».</p>",
+            "style": "texte",
+            "align": "gauche",
+            "mobileMasque": false,
+            "z": 0
+          },
+          {
+            "id": "apropos-legende",
+            "type": "texte",
+            "x": 416.7,
+            "y": 500.0,
+            "w": 583.3,
+            "html": "<p>Atelier Openbach Résidence<br>21, rue du Lieutenant Heitz, Vincennes</p>",
+            "style": "legende",
+            "align": "centre",
+            "mobileMasque": false,
+            "z": 1
+          },
+          {
+            "id": "apropos-expositions-titre",
+            "type": "texte",
+            "x": 83.3,
+            "y": 708.3,
+            "w": 500.0,
+            "html": "<p><strong>expositions</strong></p>",
+            "style": "texte",
+            "align": "gauche",
+            "mobileMasque": false,
+            "z": 2
+          },
+          {
+            "id": "apropos-expositions",
+            "type": "texte",
+            "x": 83.3,
+            "y": 770.8,
+            "w": 500.0,
+            "html": "<p><strong>2026</strong></p><p>TROIS GRAVEURS<br><em>exposition de gravures, Galerie Saint Michel, Le Crotoy, Somme 80550</em></p><p>STAMPA<br><em>exposition collective, musée de l’imprimerie, Château de la Groulais, Blain 44130</em></p><p>LES LISIÈRES<br><em>exposition collective, Galerie Coin de ciel, rue Boyer Barret, Paris 14</em></p><p><strong>2025</strong></p><p>SOUS LES ARBRES<br><em>exposition personnelle, Galerie Les Pieds dans le Plat, Vitry-sur-Seine</em></p><p>STAMPA<br><em>exposition collective, musée de l’imprimerie, Château de la Groulais, Blain 44130</em></p><p>GRAVURES<br><em>association Ombre et Lumière, Galerie du 59, rue de Rivoli, Paris</em></p><p>LUMIÈRE D’ENCRE<br><em>exposition collective, galerie Openbach, Vincennes</em></p><p>LES VARIATIONS TEXTILES<br><em>exposition collective, galerie Openbach, Vincennes</em></p><p><strong>2024</strong></p><p>PASSERELLE DE L’ART<br><em>salon, Bastille design center</em></p><p>SOAP SODA &amp; TOMATES EN BOÎTE<br><em>exposition collective, Galerie Openbach, Vincennes</em></p><p><strong>2023</strong></p><p>OÙ LES EAUX VIVENT NE CESSENT D’ARRIVER<br><em>exposition collective, estampes et installations, Anis Gras le Lieu de l’Autre, Arcueil</em></p><p><strong>2022</strong></p><p>EAUX FORTES EN FÊTE<br><em>biennale au Moulin de la Bièvre, L’Haÿ-les-Roses</em></p><p><strong>2020</strong></p><p>S’ÉTENDRE EN FILAMENTS<br><em>exposition collective, Openbach Galerie, Paris</em></p><p>JOURNÉE DE L’ESTAMPE CONTEMPORAINE<br><em>Place Saint-Sulpice, Paris</em></p>",
+            "style": "texte",
+            "align": "gauche",
+            "mobileMasque": false,
+            "z": 3
+          }
+        ]
+      },
+      "brouillon": null
+    },
+    "contact": {
+      "publie": {
+        "blocs": [
+          {
+            "id": "contact-titre",
+            "type": "texte",
+            "x": 416.7,
+            "y": 0.0,
+            "w": 333.3,
+            "html": "<p>contact</p>",
+            "style": "titre",
+            "align": "centre",
+            "mobileMasque": false,
+            "z": 0
+          },
+          {
+            "id": "contact-texte",
+            "type": "texte",
+            "x": 416.7,
+            "y": 104.2,
+            "w": 333.3,
+            "html": "<p>Visite sur rendez-vous dans mon atelier,<br>situé dans la résidence Openbach<br>21, rue du Lieutenant Heitz à Vincennes, métro Bérault</p>",
+            "style": "texte",
+            "align": "centre",
+            "mobileMasque": false,
+            "z": 1
+          }
+        ]
+      },
+      "brouillon": null
+    }
+  },
+  "galeries": {
+    "gravures": {
+      "publie": {
+        "blocs": []
+      },
+      "brouillon": null
+    },
+    "dessins": {
+      "publie": {
+        "blocs": []
+      },
+      "brouillon": null
+    }
+  },
+  "oeuvres": []
+}

@@ -3,44 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Galerie</title>
+  <title>Petite Nature Paris</title>
+  <meta name="description" content="Delphine Huard, dessinatrice et graveuse en taille douce, Vincennes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&family=Libre+Caslon+Display&family=Spline+Sans+Mono:wght@300;400;600&display=swap">
   <link rel="stylesheet" href="/style.css">
 </head>
-<body class="page-galerie">
+<body>
   <header class="entete">
-    <h1 id="nom-artiste"></h1>
-    <p id="presentation" class="presentation"></p>
+    <a href="/" class="marque" data-lien>
+      <span id="titre-site" class="titre-site">Petite Nature Paris</span>
+      <span id="nom-artiste" class="nom-artiste">Delphine Huard</span>
+    </a>
+    <nav class="menu" aria-label="Menu principal">
+      <a href="/gravures" data-lien>gravures</a>
+      <a href="/dessins" data-lien>dessins</a>
+      <a href="/demarche" data-lien>ma démarche</a>
+      <a href="/a-propos" data-lien>à propos</a>
+      <a href="/contact" data-lien>contact</a>
+    </nav>
   </header>
 
-  <main id="galerie" class="galerie" hidden>
-    <article class="oeuvre">
-      <div class="oeuvre-texte" aria-live="polite">
-        <p id="compteur" class="compteur"></p>
-        <h2 id="titre"></h2>
-        <p id="texte" class="texte"></p>
-      </div>
-
-      <div id="scene" class="scene">
-        <button id="precedente" class="nav" type="button" aria-label="Œuvre précédente">&#8249;</button>
-        <div class="cadre">
-          <canvas id="toile" role="img"></canvas>
-        </div>
-        <button id="suivante" class="nav" type="button" aria-label="Œuvre suivante">&#8250;</button>
-      </div>
-    </article>
-
-    <nav id="vignettes" class="vignettes" aria-label="Toutes les œuvres"></nav>
-  </main>
-
-  <p id="vide" class="vide" hidden>Aucune œuvre pour le moment.</p>
+  <main id="contenu" class="contenu" tabindex="-1"></main>
 
   <footer class="pied">
-    © <span id="annee"></span> <span id="nom-pied"></span> — Toutes les œuvres sont protégées par le droit d'auteur.
+    <a id="instagram" class="instagram" href="https://www.instagram.com/" target="_blank" rel="noopener" hidden></a>
+    <p class="droits">© <span id="annee"></span> <span id="nom-pied"></span> — œuvres protégées par le droit d'auteur</p>
   </footer>
 
-  <script type="module" src="/galerie.js"></script>
+  <script type="module" src="/site.js"></script>
 </body>
 </html>

@@ -1,0 +1,203 @@
+/* Mode édition (chargé uniquement quand l'artiste est connectée) */
+
+:root {
+  --edition: #2f6fdb;
+  --edition-fond: #1f1f1f;
+  --edition-danger: #d9534f;
+}
+
+body.avec-barre-edition { padding-bottom: 4.5rem; }
+
+/* ---------- Barre en bas de l'écran ---------- */
+
+.barre-edition {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  padding: 0.7rem var(--marge);
+  background: var(--edition-fond);
+  color: #eee;
+  font: 400 0.85rem/1.3 system-ui, sans-serif;
+  letter-spacing: 0;
+}
+.barre-statut { color: #bbb; }
+.barre-statut.ok { color: #8fd18f; }
+.barre-statut.erreur { color: #ff8a80; }
+.barre-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+
+.barre-edition button,
+.barre-edition .bouton,
+.barre-edition .bouton-lien {
+  font: 500 0.85rem system-ui, sans-serif;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: transparent;
+  color: #eee;
+  cursor: pointer;
+}
+.barre-edition .bouton input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.barre-edition .principal { background: var(--edition); border-color: var(--edition); color: #fff; }
+.barre-edition .danger { border-color: var(--edition-danger); color: #ffb3ad; }
+.barre-edition button:disabled { opacity: 0.35; cursor: default; }
+.barre-edition button:not(:disabled):hover, .barre-edition .bouton:hover, .barre-edition .bouton-lien:hover { filter: brightness(1.2); }
+
+.aide-edition {
+  margin: 1.5rem 0 0;
+  font: 400 0.8rem system-ui, sans-serif;
+  color: #888;
+  text-align: center;
+}
+
+/* ---------- Composition éditable ---------- */
+
+/* De la place en bas pour pouvoir poser des blocs plus bas que le contenu actuel. */
+.libre-edition {
+  min-height: 60vh;
+  padding-bottom: 40vh;
+  outline: 1px dashed rgba(47, 111, 219, 0.25);
+}
+
+.bloc-edite {
+  position: relative;
+  cursor: grab;
+  outline: 1px dashed transparent;
+  outline-offset: 4px;
+  touch-action: none;
+  transition: outline-color 0.15s;
+}
+.bloc-edite:hover { outline-color: rgba(47, 111, 219, 0.5); }
+.bloc-edite.selectionne { outline: 1px solid var(--edition); }
+.bloc-edite.en-mouvement { cursor: grabbing; opacity: 0.85; }
+.bloc-edite:focus { outline-style: solid; }
+
+.bloc-edite [contenteditable] { outline: none; min-height: 1.4em; cursor: text; }
+.bloc-edite .legende:empty { display: block; }
+.bloc-edite .legende:empty::before { content: attr(data-indice); color: #b8b8b8; }
+.bloc-edite.masque-mobile { opacity: 0.55; }
+
+/* Coin pour redimensionner */
+.poignee-taille {
+  position: absolute;
+  right: -9px;
+  bottom: -9px;
+  z-index: 6;
+  display: none;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--edition);
+  cursor: nwse-resize;
+}
+.bloc-edite:hover .poignee-taille,
+.bloc-edite.selectionne .poignee-taille { display: block; }
+
+/* Outils du bloc sélectionné, au-dessus de lui */
+.outils-bloc {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: -5px;
+  z-index: 7;
+  display: none;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 5px;
+  background: var(--edition-fond);
+  white-space: nowrap;
+  font: 400 0.78rem/1.2 system-ui, sans-serif;
+  letter-spacing: 0;
+  cursor: default;
+}
+.bloc-edite.selectionne .outils-bloc,
+.bloc-edite:focus-within .outils-bloc { display: flex; }
+.bloc-edite.selectionne { z-index: 1000 !important; }
+.outils-bloc button, .outils-bloc select, .lien-outil {
+  font: inherit;
+  color: #eee;
+  background: transparent;
+  border: none;
+  border-radius: 3px;
+  padding: 0.25rem 0.45rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+.outils-bloc select { background: #2c2c2c; }
+.outils-bloc button:hover, .outils-bloc select:hover, .lien-outil:hover { background: #3a3a3a; }
+.outils-bloc button[aria-pressed='true'] { background: var(--edition); }
+.outils-bloc .danger { color: #ff8a80; }
+
+.pastille {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--edition);
+  color: #fff;
+  font: 500 0.7rem system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+/* Fichiers glissés depuis l'ordinateur */
+.voile-depot {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: none;
+  place-items: center;
+  background: rgba(47, 111, 219, 0.12);
+  border: 3px dashed var(--edition);
+  color: var(--edition);
+  font: 500 1.4rem system-ui, sans-serif;
+  pointer-events: none;
+}
+.voile-depot.visible { display: grid; }
+
+/* ---------- Aperçu téléphone ---------- */
+
+.apercu-mobile { display: flex; justify-content: center; }
+.apercu-cadre {
+  width: 390px;
+  max-width: 100%;
+  min-height: 60vh;
+  padding: 1.5rem 16px;
+  border: 1px solid #ddd;
+  border-radius: 28px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Page d'œuvre ---------- */
+
+.infos-oeuvre {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0.5rem 1rem;
+  max-width: 46rem;
+  margin: 0 auto 2rem;
+  padding: 1rem;
+  border: 1px dashed rgba(47, 111, 219, 0.4);
+  font: 400 0.8rem system-ui, sans-serif;
+  color: #666;
+}
+.infos-oeuvre input {
+  display: block;
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font: 400 0.95rem system-ui, sans-serif;
+}
+.infos-oeuvre p { grid-column: 1 / -1; margin: 0; color: var(--edition); }
+
+@media (max-width: 760px) {
+  .infos-oeuvre { grid-template-columns: 1fr; }
+  .barre-edition { justify-content: center; }
+}
